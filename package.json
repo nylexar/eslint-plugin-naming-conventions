@@ -1,9 +1,48 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "eslint-plugin-naming-conventions",
+  "version": "1.0.1",
+  "description": "Advanced ESLint plugin for enforcing consistent file and folder naming conventions with flexible rule configuration. Features boolean logic in matchers and naming conventions, dynamic runtime aliases, monorepo configurations with rule chaining, and complex glob pattern matching. Built for ESLint 9+ flat config",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "filename",
+    "glob-matching",
+    "naming-conventions",
+    "check-file"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nylexar/eslint-plugin-naming-conventions"
+  },
+  "author": "Nylexar <hi@nylexar.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nylexar/eslint-plugin-naming-conventions/issues"
+  },
+  "homepage": "https://github.com/nylexar/eslint-plugin-naming-conventions",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "LICENSE",
+    "NOTICE.txt",
+    "README.md",
+    "dist"
+  ],
   "scripts": {
-    "dev": "pnpm --filter ./packages/plugin dev",
-    "build": "pnpm --filter ./packages/plugin build",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "vitest",
@@ -11,7 +50,19 @@
     "changeset": "changeset",
     "release": "changeset publish"
   },
+  "dependencies": {
+    "arktype": "2.1.20",
+    "micromatch": "4.0.8"
+  },
   "devDependencies": {
+    "@eslint/core": "0.15.2",
+    "@types/is-glob": "4.0.4",
+    "@types/micromatch": "4.0.9",
+    "@types/node": "24.3.0",
+    "is-glob": "4.0.3",
+    "tsup": "8.5.0",
+    "typescript": "5.9.2",
+    "vitest": "3.2.4",
     "@changesets/cli": "2.29.6",
     "@eslint/js": "9.34.0",
     "depcheck": "1.4.7",
@@ -23,9 +74,10 @@
     "eslint-plugin-unused-imports": "4.2.0",
     "jiti": "2.5.1",
     "prettier": "3.6.2",
-    "typescript": "5.9.2",
     "typescript-eslint": "8.41.0",
-    "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.2.4"
+    "vite-tsconfig-paths": "5.1.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
   }
 }
