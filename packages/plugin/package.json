@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-naming-conventions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Advanced ESLint plugin for enforcing consistent file and folder naming conventions with flexible rule configuration. Features boolean logic in matchers and naming conventions, dynamic runtime aliases, monorepo configurations with rule chaining, and complex glob pattern matching. Built for ESLint 9+ flat config",
   "keywords": [
     "eslint",
